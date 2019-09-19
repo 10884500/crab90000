@@ -4,6 +4,9 @@ html {
 body {
   margin: 0px;
 }
+nav {
+  height: 15%;
+}
 #navbar {
   justify-content: flex-end;
   display: flex;
@@ -17,16 +20,21 @@ body {
   display: flex;
   justify-content: space-around;
 }
+nav ul.navlist li.hover {
+  background-color: brown;
+}
 #navlist a {
-  color: red;
+  color: lime;
   text-decoration: none;
+  padding: 1rem;
 }
 #navlist a:hover {
   background-color: #fffddb;
 }
 li {
-  padding: 10px;
+  padding: 20px;
   list-style: none;
+  font-size: 2rem;
 }
 .welcome-section {
   display: flex;
@@ -37,21 +45,25 @@ li {
   height: 100vh;
   background-color: cornflowerblue;
 }
-nav ul.navlist li.active {
-  background-color: gray;
-}
-nav ul.navlist li.hover {
-  background-color: brown;
-}
 h1 {
-  color: darkred;
+  color: darkmagenta;
 }
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 4rem;
-  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   margin-bottom: 6rem;
+}
+#contacts a {
+  text-decoration: none;
+}
+.project-grid img {
+  width: 100%;
+}
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
 }
