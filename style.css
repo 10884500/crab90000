@@ -1,0 +1,57 @@
+html {
+  background-color: gray;
+}
+body {
+  margin: 0px;
+}
+#navbar {
+  justify-content: flex-end;
+  display: flex;
+  position: fixed;
+  background-color: darkgray;
+  width: 100%;
+  box-shadow: 0 2px 0 rgba(0, 0, 0.4);
+}
+#navlist {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+#navlist a {
+  color: red;
+  text-decoration: none;
+}
+#navlist a:hover {
+  background-color: #fffddb;
+}
+li {
+  padding: 10px;
+  list-style: none;
+}
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: cornflowerblue;
+}
+nav ul.navlist li.active {
+  background-color: gray;
+}
+nav ul.navlist li.hover {
+  background-color: brown;
+}
+h1 {
+  color: darkred;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
