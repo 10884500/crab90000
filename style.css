@@ -1,35 +1,34 @@
 html {
-  background-color: gray;
+  background-color: #404040;
 }
 body {
   margin: 0px;
-}
-nav {
-  height: 15%;
 }
 #navbar {
   justify-content: flex-end;
   display: flex;
   position: fixed;
-  background-color: darkgray;
+  background-color: #404040;
   width: 100%;
   box-shadow: 0 2px 0 rgba(0, 0, 0.4);
+}
+#navbar {
+  list-style: none;
+  display: flex;
+  
 }
 #navlist {
   list-style: none;
   display: flex;
   justify-content: space-around;
 }
-nav ul.navlist li.hover {
-  background-color: brown;
-}
 #navlist a {
-  color: lime;
+  color: #3AA637;
   text-decoration: none;
   padding: 1rem;
 }
 #navlist a:hover {
-  background-color: #fffddb;
+  background-color: #F2F2F2;
 }
 li {
   padding: 20px;
@@ -43,10 +42,11 @@ li {
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: cornflowerblue;
+  background-color: #103B73;
 }
 h1 {
-  color: darkmagenta;
+  color: #F2F2F2;
+  font-size: 4rem;
 }
 .project-grid {
   display: grid;
@@ -55,6 +55,10 @@ h1 {
   max-width: 1280px;
   margin: 0 auto;
   margin-bottom: 6rem;
+}
+#projects h2 {
+  text-align: center;
+  text-decoration: underline;
 }
 #contacts a {
   text-decoration: none;
@@ -66,4 +70,45 @@ h1 {
   html {
     font-size: 55%;
   }
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.tran {
+  background-color: #3AA637;
+  text-decoration: none;
+  text-align: center;
+  height: 10%;
+}
+.project-tile {
+  text-decoration: none;
+  color: #103B73;
+  font-size:  1.5rem;
+}
+.trans {
+  color: var(--main-gray);
+  transition: color 0.3s ease-out;
+}
+.tran:hover .trans {
+  color: #FFFFFF;
+}
+.tra:hover .trans {
+  color: #FFFFFF;
+}
+#contacts {
+  background-color: #103B73;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
+}
+img {
+  width: 384px;
+  height: 222.09px;
+}
+.tra {
+  justify-content: center;
+  text-align: center;
+  width: 384px;
+  height: 222px;
 }
