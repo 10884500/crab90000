@@ -12,23 +12,18 @@ body {
   width: 100%;
   box-shadow: 0 2px 0 rgba(0, 0, 0.4);
 }
-#navbar {
-  list-style: none;
-  display: flex;
-  
-}
 #navlist {
   list-style: none;
   display: flex;
   justify-content: space-around;
 }
 #navlist a {
-  color: #3AA637;
+  color: #3aa637;
   text-decoration: none;
   padding: 1rem;
 }
 #navlist a:hover {
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
 }
 li {
   padding: 20px;
@@ -42,10 +37,10 @@ li {
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: #103B73;
+  background-color: #103b73;
 }
 h1 {
-  color: #F2F2F2;
+  color: #f2f2f2;
   font-size: 4rem;
 }
 .project-grid {
@@ -76,39 +71,47 @@ img {
   height: auto;
 }
 .tran {
-  background-color: #3AA637;
+  background-color: #3aa637;
   text-decoration: none;
   text-align: center;
   height: 10%;
 }
 .project-tile {
   text-decoration: none;
-  color: #103B73;
-  font-size:  1.5rem;
+  color: #103b73;
+  font-size: 1.5rem;
 }
 .trans {
   color: var(--main-gray);
   transition: color 0.3s ease-out;
 }
 .tran:hover .trans {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .tra:hover .trans {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 #contacts {
-  background-color: #103B73;
+  background-color: #103b73;
   text-align: center;
-  justify-content: center;
-  height: 100%;
+  height: 65vh;
+  box-shadow: #404040;
+  display: flex;
+  margin-top: 2rem;
 }
 img {
   width: 384px;
   height: 222.09px;
 }
 .tra {
-  justify-content: center;
-  text-align: center;
   width: 384px;
   height: 222px;
+  background-color: #103b73;
+  color: #3aa637;
+}
+#profile-link {
+  justify-content: flex;
+}
+h2 {
+  color: #3aa637;
 }
