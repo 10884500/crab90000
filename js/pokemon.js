@@ -45,7 +45,7 @@ function popDOM(singlePokemon) {
   pokeDiv.appendChild(name);
   pokeDiv.appendChild(pic);
 
-  mainArea.appendChild(pokeDiv);
+ // mainArea.appendChild(pokeDiv);
 }
 
 function getPokeNumber(id) {
