@@ -14,9 +14,11 @@ async function getAPIData(url) {
 }
 
 // use returned Async data
-const theData = getAPIData("https://pokeapi.co/api/v2/pokemon/").then(data => {
+const theData = getAPIData("https://pokeapi.co/api/v2/pokemon/")
+.then(data => {
   for (const pokemon of data.results) {
-    getAPIData(pokemon.url).then(pokeData => {
+    getAPIData(pokemon.url)
+    .then(pokeData => {
       popDOM(pokeData);
     });
   }
