@@ -3,6 +3,20 @@
 //   return await response.json()
 // }
 
+class Pokemon {
+  constructor(id, name) {
+    this.id = id
+    this.name = name
+  }
+}
+
+const Trevomon = new Pokemon(400, 'Trevomon')
+
+const newPoke = document.querySelector('#newPoke')
+newPoke.addEventListener('click', function() {
+  popDOM(Trevomon)
+})
+
 async function getAPIData(url) {
   try {
     const response = await fetch(url);
@@ -19,12 +33,11 @@ const theData = getAPIData("https://pokeapi.co/api/v2/pokemon/")
   for (const pokemon of data.results) {
     getAPIData(pokemon.url)
     .then(pokeData => {
-      popDOM(pokeData);
+      popDOM(pokeData)
     });
   }
 });
 
-console.log(theData);
 
 let mainArea = document.querySelector("main");
 
@@ -39,15 +52,16 @@ function popDOM(singlePokemon) {
 
   let pokeNum = getPokeNumber(singlePokemon.id);
 
-  name.textContent = `${singlePokemon.name} height: $
-      {singlePokemon.height}`
+  name.textContent = `${singlePokemon.name} height: ${singlePokemon.height}`
 
-      pic.src = `../images/${pokeNum}.png`;
+  pic.src = `../images/${pokeNum}.png`;
 
   pokeDiv.appendChild(name);
   pokeDiv.appendChild(pic);
 
- // mainArea.appendChild(pokeDiv);
+
+
+  mainArea.appendChild(pokeDiv);
 }
 
 function getPokeNumber(id) {

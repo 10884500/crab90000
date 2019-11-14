@@ -18,3 +18,13 @@ main {
     flex-direction: column;
     align-items: center;
 }
+
+#newPoke {
+    color: black;
+    background-color: azure;
+    display: flex;
+    width: 50;
+    height: auto;
+    justify-content: center;
+    margin-left: 50%;
+}

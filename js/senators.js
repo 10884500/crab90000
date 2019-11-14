@@ -13,6 +13,7 @@ let allSenators = []
 let simpleSenators = []
 let republicans = []
 let democrats = []
+let independents = []
 
 const allData = getAPIData('json/senators.json').then(data => {
     allSenators = data.results[0].members
@@ -58,10 +59,17 @@ function totalVotes(senatorList) {
   return results
 }
 
-console.log(testReduce)
+function oldestSenator (senatorList) {
+  return senatorList.reduce((oldest, senator) => {
+    return (oldest.age || 0) > senator.age ? oldest : senator
+  }, {})
+}
 
-
-
+function sortSenatorAge (senatorList) {
+  return senatorList.sort((a, b) => {
+    return a.age, b.age 
+  })
+}
 
 const container = document.querySelector('.container')
 
@@ -142,8 +150,8 @@ function cardContent(senator) {
     media.appendChild(mediaLeft)
     media.appendChild(mediaContent)
 
-    contentDiv.appendChild(contentBreak)
-    contentDiv.appendChild(agePara)
+    mediaContent.appendChild(contentBreak)
+    mediaContent.appendChild(agePara)
     cardContent.appendChild(media)
     cardContent.appendChild
     return cardContent
