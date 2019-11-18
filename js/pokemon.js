@@ -28,24 +28,22 @@ async function getAPIData(url) {
 }
 
 // use returned Async data
-const theData = getAPIData("https://pokeapi.co/api/v2/pokemon/")
-.then(data => {
+const theData = getAPIData("https://pokeapi.co/api/v2/pokemon/").then(data => {
   for (const pokemon of data.results) {
-    getAPIData(pokemon.url)
-    .then(pokeData => {
+    getAPIData(pokemon.url).then(pokeData => {
       popDOM(pokeData)
     })
   }
 })
 
 
-let mainArea = document.querySelector("main")
+let mainArea = document.querySelector('main')
 
 function popDOM(single_poke) {
-  let pokeDiv = document.createElement("div")
-  let pokeCard = document.createElement("div")
-  let pokeFront = document.createElement("div")
-  let pokeBack = document.createElement("div")
+  let pokeDiv = document.createElement('div')
+  let pokeCard = document.createElement('div')
+  let pokeFront = document.createElement('div')
+  let pokeBack = document.createElement('div')
 
   fillCardFront(pokeFront, single_poke)
   fillCardBack(pokeBack, single_poke)
@@ -65,9 +63,9 @@ function popDOM(single_poke) {
 
 function fillCardFront(pokeFront, data) {
   pokeFront.setAttribute('class', 'card_face crad_face--front')
-  let name = document.createElement("h1")
-  let pic = document.createElement("img")
-    pokeDiv.appendChild(pic)
+  let name = document.createElement('h1')
+  let pic = document.createElement('img')
+    pic.setAttribute('class', 'picDivs')
   let pokeNum = getPokeNumber(data.id)
   pokeFront.appendChild(name)
   name.textContent = `${data.name} height: ${data.height}`
@@ -81,9 +79,9 @@ function fillCardFront(pokeFront, data) {
 function fillCardBack(pokeBack, data) {
   pokeBack.setAttribute('class', 'card_face crad_face--back')
   let pokeOrder = document.createElement('p')
-  let pokeHP = document.createElement('h4')
-  pokeOrder.textContent = data.pokeOrder
-  pokeHP.textContent = data.stats[0].base_stat
+  let pokeHP = document.createElement('h5')
+  pokeOrder.textContent = `#${data.id} ${data.name[0].toUpperCase()}${data.name.slice(1)}`
+  // pokeHP.textContent = data.stats[0].base_stat
   pokeBack.appendChild(pokeOrder)
   pokeBack.appendChild(pokeHP)
 }
@@ -94,3 +92,5 @@ function getPokeNumber(id) {
     return `0${id}`
   } else return id
 }
+
+
