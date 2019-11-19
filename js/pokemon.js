@@ -79,12 +79,9 @@ function fillCardFront(pokeFront, data) {
   let pokeNum = getPokeNumber(data.id)
   pokeFront.appendChild(name)
   name.textContent = `${data.name[0].toUpperCase()}${data.name.slice(1)}`
-
   pic.src = `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeNum}.png`
-
   pokeFront.appendChild(pic)
   pokeFront.appendChild(name)
-  
 }
 
 function fillCardBack(pokeBack, data) {
@@ -96,7 +93,7 @@ function fillCardBack(pokeBack, data) {
 //pokeHP.textContent = 'Base health: ' + data.stats[0].base_stat
   pokeHieght.textContent = 'height: ' + `${data.height}`
   pokeBack.appendChild(pokeOrder)
-  pokeBack.appendChild(pokeHP)
+  // pokeBack.appendChild(pokeHP)
   pokeBack.appendChild(pokeHieght)
 }
 
