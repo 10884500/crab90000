@@ -62,13 +62,13 @@ function popDOM(single_poke) {
 }
 
 function fillCardFront(pokeFront, data) {
-  pokeFront.setAttribute('class', 'card_face card__face--front')
-  let name = document.createElement('h1')
+  pokeFront.setAttribute('class', 'card__face card__face--front')
+  let name = document.createElement('h3')
   let pic = document.createElement('img')
     pic.setAttribute('class', 'picDivs')
   let pokeNum = getPokeNumber(data.id)
   pokeFront.appendChild(name)
-  name.textContent = `${data.name} height: ${data.height}`
+  name.textContent = `${data.name[0].toUpperCase()}${data.name.slice(1)}`
 
     pic.src = `../images/${pokeNum}.png`
 
@@ -77,13 +77,16 @@ function fillCardFront(pokeFront, data) {
 }
 
 function fillCardBack(pokeBack, data) {
-  pokeBack.setAttribute('class', 'card_face card__face--back')
+  pokeBack.setAttribute('class', 'card__face card__face--back')
   let pokeOrder = document.createElement('p')
-  let pokeHP = document.createElement('h5')
-  pokeOrder.textContent = `#${data.id} ${data.name[0].toUpperCase()}${data.name.slice(1)}`
-  pokeHP.textContent = data.stats[0].base_stat
+  let pokeHP = document.createElement('p')
+  let pokeHieght = document.createElement('p')
+  pokeOrder.textContent = `#${data.id}`
+  pokeHP.textContent = 'Base health: ' + data.stats[0].base_stat
+  pokeHieght.textContent = 'height: ' + `${data.height}`
   pokeBack.appendChild(pokeOrder)
   pokeBack.appendChild(pokeHP)
+  pokeBack.appendChild(pokeHieght)
 }
 
 function getPokeNumber(id) {
