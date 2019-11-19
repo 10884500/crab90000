@@ -3,16 +3,12 @@
 //   return await response.json()
 // }
 
-// https://github.com/fanzeyi/pokemon.json/tree/master/images
-
 class Pokemon {
   constructor(id, name) {
     this.id = id
     this.name = name
   }
 }
-
-const Trevomon = new Pokemon(400, 'Trevomon')
 
 const newPoke = document.querySelector('#newPoke')
 newPoke.addEventListener('click', function() {
@@ -46,7 +42,6 @@ const theData = getAPIData("https://pokeapi.co/api/v2/pokemon/?limit=25").then(d
   }
 })
 
-
 let mainArea = document.querySelector('main')
 
 function popDOM(single_poke) {
@@ -77,7 +72,6 @@ function fillCardFront(pokeFront, data) {
   let pic = document.createElement('img')
     pic.setAttribute('class', 'picDivs')
   let pokeNum = getPokeNumber(data.id)
-  pokeFront.appendChild(name)
   name.textContent = `${data.name[0].toUpperCase()}${data.name.slice(1)}`
   pic.src = `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeNum}.png`
   pokeFront.appendChild(pic)
@@ -90,10 +84,10 @@ function fillCardBack(pokeBack, data) {
   let pokeHP = document.createElement('p')
   let pokeHieght = document.createElement('p')
   pokeOrder.textContent = `#${data.id}`
-//pokeHP.textContent = 'Base health: ' + data.stats[0].base_stat
+  pokeHP.textContent = 'Base health: ' + data.stats[0].base_stat
   pokeHieght.textContent = 'height: ' + `${data.height}`
   pokeBack.appendChild(pokeOrder)
-  // pokeBack.appendChild(pokeHP)
+  pokeBack.appendChild(pokeHP)
   pokeBack.appendChild(pokeHieght)
 }
 
@@ -103,5 +97,3 @@ function getPokeNumber(id) {
     return `0${id}`
   } else return id
 }
-
-
