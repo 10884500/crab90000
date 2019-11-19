@@ -62,7 +62,7 @@ function popDOM(single_poke) {
 }
 
 function fillCardFront(pokeFront, data) {
-  pokeFront.setAttribute('class', 'card_face crad_face--front')
+  pokeFront.setAttribute('class', 'card_face card__face--front')
   let name = document.createElement('h1')
   let pic = document.createElement('img')
     pic.setAttribute('class', 'picDivs')
@@ -77,11 +77,11 @@ function fillCardFront(pokeFront, data) {
 }
 
 function fillCardBack(pokeBack, data) {
-  pokeBack.setAttribute('class', 'card_face crad_face--back')
+  pokeBack.setAttribute('class', 'card_face card__face--back')
   let pokeOrder = document.createElement('p')
   let pokeHP = document.createElement('h5')
   pokeOrder.textContent = `#${data.id} ${data.name[0].toUpperCase()}${data.name.slice(1)}`
-  // pokeHP.textContent = data.stats[0].base_stat
+  pokeHP.textContent = data.stats[0].base_stat
   pokeBack.appendChild(pokeOrder)
   pokeBack.appendChild(pokeHP)
 }
