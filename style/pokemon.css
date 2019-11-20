@@ -70,3 +70,7 @@ main {
   font-size: 24pt;
   margin: 20rem;
 }
+
+html {
+  background-color: red;
+}
