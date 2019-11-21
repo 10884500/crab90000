@@ -95,9 +95,19 @@ function fillCardFront(pokeFront, data) {
     pic.classList.toggle('bounce');
   };
 
+  // pic.onmouseleave = function() {
+  //   pic.classList.toggle('bounce');
+  // };
+
+  // pokeFront.onmouseover = function() {
+  //   pokeFront.classList.toggle('wobble');
+  // };
+
   pic.onmouseleave = function() {
-    pic.classList.toggle('bounce');
+    pic.classList.toggle('wobble');
   };
+
+
 }
 
 function fillCardBack(pokeBack, data) {

@@ -55,7 +55,7 @@ main {
 .card__face--front {
   color: black;
   box-shadow: 0px 0px 0px 10px rgb(33, 42, 139) inset, 0px 5px 10px 0px rgba(0, 0, 0, .5); 
-  background: rgb(247,247,247);
+  /* background: rgb(247,247,247); */
   background: radial-gradient(circle, rgba(247,247,247,1) 4%, rgba(0,212,255,1) 49%, rgba(55,62,158,1) 100%);
 }
 
@@ -80,6 +80,7 @@ main {
 
 html {
   background-color: rgb(58, 60, 61);
+  cursor: url(/images/sprite-cursor.png), alias;
 }
 
 div.scene {
@@ -160,4 +161,42 @@ html {
 .bounce {
   animation: bounce .75s;
   transform-origin: center bottom;
+  animation-iteration-count: infinite;
+}
+
+
+/*  Wobbling animation */
+@keyframes wobble {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  15% {
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+
+  30% {
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+
+  45% {
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+
+  60% {
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  75% {
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.wobble {
+  animation-name: wobble;
+  animation-iteration-count: 1;
 }
