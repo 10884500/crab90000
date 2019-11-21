@@ -64,26 +64,24 @@ function popDOM(single_poke) {
 
   pokeCard.addEventListener('click', function() {
     pokeCard.classList.toggle('is-flipped')
-
-
-pokeDiv.onmouseover = function() {
-  this.setAttribute(
-    "style",
-    `border: 1px solid red; border-radius: 25px`
-  );
-};
-
-pokeDiv.onmouseleave = function() {
-  this.setAttribute("style", `border: none`);
-};
   })
-}
+
+
+  // pokeDiv.onmouseover = function() {
+  //   this.setAttribute('style', 'color:black');
+  // };
+
+  // pokeDiv.onmouseleave = function() {
+  //   this.setAttribute("style", `border: none`);
+  // };
+    }
+  
 
 function fillCardFront(pokeFront, data) {
   pokeFront.setAttribute('class', 'card__face card__face--front')
   let name = document.createElement('h3')
   let pic = document.createElement('img')
-    pic.setAttribute('class', 'picDivs')
+    pic.setAttribute('class', 'picDivs', 'animated bounce')
   let pokeNum = getPokeNumber(data.id)
   name.textContent = `${data.name[0].toUpperCase()}${data.name.slice(1)}`
   pic.src = `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeNum}.png`
@@ -110,5 +108,7 @@ function getPokeNumber(id) {
     return `0${id}`
   } else return id
 }
+
+
 
 // pokeOrder.sort((a, b) => a.pokeId - b.pokeId)

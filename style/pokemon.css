@@ -15,28 +15,26 @@ main {
     padding-top: 1rem;
 }
 
-.chardivs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.picdivs.animated:hover {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
 }
 
 .scene {
-  width: 200px;
-  height: 260px;
-  border: 1px solid #CCC;
-  margin: 10px 0;
-  perspective: 600px;
-  background-color: darkgray;
-  border-radius: 25px;
+  color: black;
 }
 
 .card {
-  width: 100%;
   transition: transform 1s;
   transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
+  width: 200px;
+  height: 260px;
+  margin: 10px 0;
+  perspective: 600px;
 }
 
 .card.is-flipped {
@@ -50,15 +48,24 @@ main {
   font-weight: bold;
   font-size: 16pt;
   backface-visibility: hidden;
+  height: 260px;
 }
 
 .card__face--front {
   color: black;
+  background-color: ;
+  border-radius: 25px;
+  box-shadow: 0px 0px 0px 10px rgb(33, 42, 139) inset; 
+  background: rgb(247,247,247);
+  background: radial-gradient(circle, rgba(247,247,247,1) 4%, rgba(0,212,255,1) 49%, rgba(55,62,158,1) 100%);
 }
 
 .card__face--back {
   transform: rotateY(180deg);
-}
+  perspective: 600px;
+  background-color: darkgray;
+  border-radius: 25px;
+  box-shadow: 0px 0px 0px 10px rgb(241, 214, 41) inset; }
 
 #newPoke {
   color: black;
@@ -83,16 +90,7 @@ div.scene {
 }
 
 .card__face.card__face--back {
-  height: 200px;
-  width: 250px;
-}
-
-.card.is-flipped {
-  height: 260px;
-}
-
-.card__face--front {
-  height: 260px;
+  width: 200px;
 }
 
 #hello {
@@ -105,7 +103,7 @@ div.scene {
 }
 
 #hello:hover {
-  color:white;
+  color: white;
 }
 
 #skip {
@@ -117,16 +115,50 @@ div.scene {
 }
 
 #header-stuffs {
-  width: 100%;
+  width: 80%;
   height: auto;
-  margin-left: 2rem;
-  margin-bottom: 30rem;
+  margin-bottom: 38rem;
   background-color: rgba(155, 155, 155, 50%);
   border-radius: 100px;
+  padding: 1rem;
+  margin-left: 8%;
 }
 
 html {
   background-image: url(/images/pro-oak.png);
   background-repeat: no-repeat;
-  background-position: 50% 3%;
+  background-position: 50% 4%;
+}
+
+
+
+@keyframes bounce {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+.bounce {
+  animation-name: bounce;
+  transform-origin: center bottom;
 }
