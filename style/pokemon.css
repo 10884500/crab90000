@@ -35,6 +35,8 @@ main {
   height: 260px;
   margin: 10px 0;
   perspective: 600px;
+  cursor: url(/images/pBall.cur), pointer;
+
 }
 
 .card.is-flipped {
@@ -80,7 +82,7 @@ main {
 
 html {
   background-color: rgb(58, 60, 61);
-  cursor: url(/images/sprite-cursor.png), alias;
+  cursor: url("/images/sprite-cursor.png"), auto;
 }
 
 div.scene {
