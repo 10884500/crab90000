@@ -23,10 +23,22 @@ newPoke.addEventListener('click', function() {
   }
 })
 
+function getHP(pokeId) {
+  getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
+  .then(pokemon => {
+    const HP = pokemon.stats.find((element => {
+      return element.stat.name === 'hp'
+    }))
+    return HP.base_stat
+  })
+}
+
 async function getAPIData(url) {
   try {
     const response = await fetch(url)
     const data = await response.json()
+    const HP = await getHP(data.id)
+    data.hp = HP
     return data
   } catch (error) {
     console.error(error)
@@ -65,15 +77,6 @@ function popDOM(single_poke) {
   pokeCard.addEventListener('click', function() {
     pokeCard.classList.toggle('is-flipped')
   })
-
-
-  // picDivs.onmouseover = function() {
-  //   picDivs.classList.toggle('bounce');
-  // };
-
-  // picDivs.onmouseleave = function() {
-  //   picDivs.classList.toggle('bounce');
-  // };
     }
   
 
@@ -103,7 +106,7 @@ function fillCardBack(pokeBack, data) {
   let pokeHP = document.createElement('p')
   let pokeHieght = document.createElement('p')
   pokeOrder.textContent = `#${data.id}`
-  pokeHP.textContent = 'Base health: ' + data.stats[0].base_stat
+  pokeHP.textContent = 'Base Hit Points: ' + data.hp
   pokeHieght.textContent = 'height: ' + `${data.height}`
   pokeBack.appendChild(pokeOrder)
   pokeBack.appendChild(pokeHP)
@@ -119,4 +122,67 @@ function getPokeNumber(id) {
 
 
 
+
 // pokeOrder.sort((a, b) => a.pokeId - b.pokeId)
+
+
+let typeDrop = [
+  "fire",
+  "flying",
+  "bug",
+  "dark",
+  "dragon",
+  "electric",
+  "fairy",
+  "fighting",
+  "ghost",
+  "grass",
+  "ground",
+  "ice",
+  "normal",
+  "poison",
+  "psychic",
+  "rock",
+  "steel",
+  "water"
+];
+
+function color(type) {
+  if (type === "fire") {
+    return "#EE8130";
+  } else if (type === "flying") {
+    return "#A98FF3";
+  } else if (type === "bug") {
+    return "#A6B91A";
+  } else if (type === "dark") {
+    return "#705746";
+  } else if (type === "dragon") {
+    return "#6F35FC";
+  } else if (type === "electric") {
+    return "#F7D02C";
+  } else if (type === "fairy") {
+    return "#D685AD";
+  } else if (type === "fighting") {
+    return "#C22E28";
+  } else if (type === "ghost") {
+    return "#735797";
+  } else if (type === "grass") {
+    return "#7AC74C";
+  } else if (type === "ground") {
+    return "#E2BF65";
+  } else if (type === "ice") {
+    return "#96D9D6";
+  } else if (type === "normal") {
+    return "#A8A77A";
+  } else if (type === "poison") {
+    return "#A33EA1";
+  } else if (type === "psychic") {
+    return "#F95587";
+  } else if (type === "rock") {
+    return "#B6A136";
+  } else if (type === "steel") {
+    return "#B7B7CE";
+  } else if (type === "water") {
+    return "#6390F0";
+  }
+}
