@@ -27,7 +27,8 @@ main {
   border: 1px solid #CCC;
   margin: 10px 0;
   perspective: 600px;
-  background-color: aqua;
+  background-color: darkgray;
+  border-radius: 25px;
 }
 
 .card {
@@ -72,5 +73,5 @@ main {
 }
 
 html {
-  background-color: red;
+  background-color: rgb(58, 60, 61);
 }
