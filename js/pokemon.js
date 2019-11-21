@@ -67,12 +67,12 @@ function popDOM(single_poke) {
   })
 
 
-  // pokeDiv.onmouseover = function() {
-  //   this.setAttribute('style', 'color:black');
+  // picDivs.onmouseover = function() {
+  //   picDivs.classList.toggle('bounce');
   // };
 
-  // pokeDiv.onmouseleave = function() {
-  //   this.setAttribute("style", `border: none`);
+  // picDivs.onmouseleave = function() {
+  //   picDivs.classList.toggle('bounce');
   // };
     }
   
@@ -87,6 +87,14 @@ function fillCardFront(pokeFront, data) {
   pic.src = `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeNum}.png`
   pokeFront.appendChild(pic)
   pokeFront.appendChild(name)
+
+    pic.onmouseover = function() {
+    pic.classList.toggle('bounce');
+  };
+
+  pic.onmouseleave = function() {
+    pic.classList.toggle('bounce');
+  };
 }
 
 function fillCardBack(pokeBack, data) {
