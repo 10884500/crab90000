@@ -55,6 +55,7 @@ function popDOM(single_poke) {
 
   pokeDiv.setAttribute('class', 'scene')
   pokeCard.setAttribute('class', 'card')
+
   pokeCard.appendChild(pokeFront)
   pokeCard.appendChild(pokeBack)
   pokeDiv.appendChild(pokeCard)
@@ -63,6 +64,18 @@ function popDOM(single_poke) {
 
   pokeCard.addEventListener('click', function() {
     pokeCard.classList.toggle('is-flipped')
+
+
+pokeDiv.onmouseover = function() {
+  this.setAttribute(
+    "style",
+    `border: 1px solid red; border-radius: 25px`
+  );
+};
+
+pokeDiv.onmouseleave = function() {
+  this.setAttribute("style", `border: none`);
+};
   })
 }
 
@@ -98,3 +111,4 @@ function getPokeNumber(id) {
   } else return id
 }
 
+// pokeOrder.sort((a, b) => a.pokeId - b.pokeId)

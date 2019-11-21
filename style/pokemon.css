@@ -75,3 +75,58 @@ main {
 html {
   background-color: rgb(58, 60, 61);
 }
+
+div.scene {
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.card__face.card__face--back {
+  height: 200px;
+  width: 250px;
+}
+
+.card.is-flipped {
+  height: 260px;
+}
+
+.card__face--front {
+  height: 260px;
+}
+
+#hello {
+  font-family: 'Press Start 2P', cursive;
+  color: yellow;
+  text-align: center;
+  -webkit-transition: 1s color( white);
+  transition: color 1s;
+  margin-bottom: 1rem;
+}
+
+#hello:hover {
+  color:white;
+}
+
+#skip {
+  font-family: 'Press Start 2P', cursive;
+  color: yellow;
+  font-size: 8pt;
+  text-align: center;
+  
+}
+
+#header-stuffs {
+  width: 100%;
+  height: auto;
+  margin-left: 2rem;
+  margin-bottom: 30rem;
+  background-color: rgba(155, 155, 155, 50%);
+  border-radius: 100px;
+}
+
+html {
+  background-image: url(/images/pro-oak.png);
+  background-repeat: no-repeat;
+  background-position: 50% 3%;
+}
