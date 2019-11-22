@@ -23,22 +23,21 @@ newPoke.addEventListener('click', function() {
   }
 })
 
-function getHP(pokeId) {
-  getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
-  .then(pokemon => {
-    const HP = pokemon.stats.find((element => {
-      return element.stat.name === 'hp'
-    }))
-    return HP.base_stat
-  })
-}
+// async function getHP(pokeId) {
+//   getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`).then(pokemon => {
+//     const HP = pokemon.stats.find(element => {
+//       return element.stat.name === "hp"
+//     })
+//     return HP.base_stat
+//   })
+// }
 
 async function getAPIData(url) {
   try {
     const response = await fetch(url)
     const data = await response.json()
-    const HP = await getHP(data.id)
-    data.hp = HP
+    // const HP = await getHP(data.id)
+    // data.hp = HP
     return data
   } catch (error) {
     console.error(error)
@@ -91,7 +90,7 @@ function fillCardFront(pokeFront, data) {
   pokeFront.appendChild(pic)
   pokeFront.appendChild(name)
 
-    pic.onmouseover = function() {
+  pic.onmouseover = function() {
     pic.classList.toggle('bounce');
   };
 
@@ -114,13 +113,20 @@ function fillCardBack(pokeBack, data) {
   pokeBack.setAttribute('class', 'card__face card__face--back')
   let pokeOrder = document.createElement('p')
   let pokeHP = document.createElement('p')
-  let pokeHieght = document.createElement('p')
+  
+  let pic = document.createElement('img')
+    pic.setAttribute('class', 'sprites')
   pokeOrder.textContent = `#${data.id}`
-  pokeHP.textContent = 'Base Hit Points: ' + data.hp
-  pokeHieght.textContent = 'height: ' + `${data.height}`
+
+  pokeHP.textContent = 'Base Hit Points: ' + `${data.stats[5].base_stat}`
+
+  let pokeNum = getPokeNumber(data.id)
+
+  pic.src = `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/sprites/${pokeNum}MS.png`
+
+  pokeBack.appendChild(pic)
   pokeBack.appendChild(pokeOrder)
   pokeBack.appendChild(pokeHP)
-  pokeBack.appendChild(pokeHieght)
 }
 
 function getPokeNumber(id) {
