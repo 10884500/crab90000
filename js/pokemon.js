@@ -3,12 +3,15 @@
 //   return await response.json()
 // }
 
+
+
 class Pokemon {
   constructor(id, name) {
     this.id = id
     this.name = name
   }
 }
+
 
 const newPoke = document.querySelector('#newPoke')
 newPoke.addEventListener('click', function() {
@@ -65,6 +68,8 @@ function popDOM(single_poke) {
   fillCardBack(pokeBack, single_poke)
 
   pokeDiv.setAttribute('class', 'scene')
+  pokeDiv.setAttribute('id', `${single_poke.types[0].type.name}`)
+
   pokeCard.setAttribute('class', 'card')
 
   pokeCard.appendChild(pokeFront)
@@ -111,7 +116,12 @@ function fillCardBack(pokeBack, data) {
   pokeBack.setAttribute('class', 'card__face card__face--back')
   let pokeOrder = document.createElement('p')
   let pokeHP = document.createElement('p')
-  
+
+  let pokeType = document.createElement('p')
+  pokeType.setAttribute('class', `${data.types[0].type.name}`)
+    pokeType.textContent = `${data.types[0].type.name}`
+
+
   let pic = document.createElement('img')
     pic.setAttribute('class', 'sprites')
   pokeOrder.textContent = `#${data.id}`
@@ -124,6 +134,7 @@ function fillCardBack(pokeBack, data) {
 
   pokeBack.appendChild(pic)
   pokeBack.appendChild(pokeOrder)
+  pokeBack.appendChild(pokeType)
   pokeBack.appendChild(pokeHP)
 }
 
@@ -157,123 +168,44 @@ let types = [
   "water"
 ];
 
-// let types = document.createElement('p')
-
-function color(type) {
-  if (type === "fire") {
-    return "#EE8130";
-  } else if (type === "flying") {
-    return "#A98FF3";
-  } else if (type === "bug") {
-    return "#A6B91A";
-  } else if (type === "dark") {
-    return "#705746";
-  } else if (type === "dragon") {
-    return "#6F35FC";
-  } else if (type === "electric") {
-    return "#F7D02C";
-  } else if (type === "fairy") {
-    return "#D685AD";
-  } else if (type === "fighting") {
-    return "#C22E28";
-  } else if (type === "ghost") {
-    return "#735797";
-  } else if (type === "grass") {
-    return "#7AC74C";
-  } else if (type === "ground") {
-    return "#E2BF65";
-  } else if (type === "ice") {
-    return "#96D9D6";
-  } else if (type === "normal") {
-    return "#A8A77A";
-  } else if (type === "poison") {
-    return "#A33EA1";
-  } else if (type === "psychic") {
-    return "#F95587";
-  } else if (type === "rock") {
-    return "#B6A136";
-  } else if (type === "steel") {
-    return "#B7B7CE";
-  } else if (type === "water") {
-    return "#6390F0";
+filterSelection("all");
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("scene");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "showpoke");
+    if (x[i].id.indexOf(c) > -1) w3AddClass(x[i], "showpoke");
   }
 }
 
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
 
-// var slider = document.getElementById("myRange");
-// var output = document.getElementById('pokeTypes');
-// output.innerHTML = slider.value;
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
 
-// slider.oninput = function() {
-//   output.innerHTML = this.value;
-// }
-
-// console.log(output)
-
-// Different ways of trying the slider filter
-
-// $("#myRange").change(function(){
-//   var s = "";
-//   var value = $(this).val();
-
-//   if(value == 0){
-//       s = "All";
-//   }
-//   else if(value == 1){
-//       s = "fire";
-//   }
-//   else if(value == 2){
-//       s = "flying";
-//   }
-//   else if(value == 3){
-//       s = "bug";
-//   }
-//   else if(value == 4){
-//     s = "dark";
-//   }
-//   else if(value == 5){
-//     s = "dragon";
-//   }
-//   else if(value == 6){
-//     s = "electric";
-//   }
-//   else if(value == 7){
-//     s = "fairy";
-//   }
-//   else if(value == 8){
-//     s = "fighting";
-//   }
-//   else if(value == 9){
-//     s = "ghost";
-//   }
-//   else if(value == 10){
-//     s = "grass";
-//   }
-//   else if(value == 11){
-//     s = "ground";
-//   }
-//   else if(value == 12){
-//     s = "ice";
-//   }
-//   else if(value == 13){
-//     s = "normal";
-//   }
-//   else if(value == 14){
-//     s = "poison";
-//   }
-//   else if(value == 15){
-//     s = "psychic";
-//   }
-//   else if(value == 16){
-//     s = "rock";
-//   }
-//   else if(value == 17){
-//     s = "steel";
-//   }
-//   else if(value == 18){
-//     s = "water";
-//   }
-
-
-//   $("#pokeTypes").text(s);
-// });
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}

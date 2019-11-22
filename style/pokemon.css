@@ -24,6 +24,7 @@ main {
 
 .scene {
   color: black;
+  display: none;
 }
 
 .card {
@@ -78,6 +79,7 @@ main {
   border-radius: 20px;
   font-size: 24pt;
   margin: 4rem;
+  text-align: center;
 }
 
 html {
@@ -208,28 +210,17 @@ html {
   height: auto;
 }
 
-.slidecontainer {
-  width: 75%;
-  margin: 0px;
-  justify-content: center;
-  align-items: center;
-  color: white;
+.showpoke {
+  display: block;
+
 }
 
-/* The slider itself */
-.slider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 75%;
-  height: 25px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-  border-radius: 25px;
+#myBtnContainer {
+  text-align: center;
 }
 
-/* #pokeTypes {
-  color: white;
-} */
+#ahhh {
+  font-family: 'Press Start 2P', cursive;
+  color: yellow;
+  text-align: center;
+}
