@@ -105,8 +105,6 @@ function fillCardFront(pokeFront, data) {
   pic.onmouseleave = function() {
     pic.classList.toggle('wobble');
   };
-
-
 }
 
 function fillCardBack(pokeBack, data) {
@@ -136,13 +134,9 @@ function getPokeNumber(id) {
   } else return id
 }
 
-
-
-
 // pokeOrder.sort((a, b) => a.pokeId - b.pokeId)
 
-
-let typeDrop = [
+let types = [
   "fire",
   "flying",
   "bug",
@@ -162,6 +156,8 @@ let typeDrop = [
   "steel",
   "water"
 ];
+
+// let types = document.createElement('p')
 
 function color(type) {
   if (type === "fire") {
@@ -202,3 +198,82 @@ function color(type) {
     return "#6390F0";
   }
 }
+
+
+// var slider = document.getElementById("myRange");
+// var output = document.getElementById('pokeTypes');
+// output.innerHTML = slider.value;
+
+// slider.oninput = function() {
+//   output.innerHTML = this.value;
+// }
+
+// console.log(output)
+
+// Different ways of trying the slider filter
+
+// $("#myRange").change(function(){
+//   var s = "";
+//   var value = $(this).val();
+
+//   if(value == 0){
+//       s = "All";
+//   }
+//   else if(value == 1){
+//       s = "fire";
+//   }
+//   else if(value == 2){
+//       s = "flying";
+//   }
+//   else if(value == 3){
+//       s = "bug";
+//   }
+//   else if(value == 4){
+//     s = "dark";
+//   }
+//   else if(value == 5){
+//     s = "dragon";
+//   }
+//   else if(value == 6){
+//     s = "electric";
+//   }
+//   else if(value == 7){
+//     s = "fairy";
+//   }
+//   else if(value == 8){
+//     s = "fighting";
+//   }
+//   else if(value == 9){
+//     s = "ghost";
+//   }
+//   else if(value == 10){
+//     s = "grass";
+//   }
+//   else if(value == 11){
+//     s = "ground";
+//   }
+//   else if(value == 12){
+//     s = "ice";
+//   }
+//   else if(value == 13){
+//     s = "normal";
+//   }
+//   else if(value == 14){
+//     s = "poison";
+//   }
+//   else if(value == 15){
+//     s = "psychic";
+//   }
+//   else if(value == 16){
+//     s = "rock";
+//   }
+//   else if(value == 17){
+//     s = "steel";
+//   }
+//   else if(value == 18){
+//     s = "water";
+//   }
+
+
+//   $("#pokeTypes").text(s);
+// });
