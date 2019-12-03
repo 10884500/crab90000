@@ -84,7 +84,7 @@ main {
 
 html {
   background-color: rgb(58, 60, 61);
-  cursor: url("/images/sprite-cursor.png"), auto;
+  cursor: url(/images/pBall.cur), pointer;
 }
 
 div.scene {
