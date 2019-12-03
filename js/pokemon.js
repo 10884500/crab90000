@@ -136,6 +136,10 @@ function fillCardBack(pokeBack, data) {
   pokeBack.appendChild(pokeOrder)
   pokeBack.appendChild(pokeType)
   pokeBack.appendChild(pokeHP)
+
+  pic.onmouseover = function() {
+    pic.classList.toggle('wobble');
+  };
 }
 
 function getPokeNumber(id) {
