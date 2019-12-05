@@ -172,18 +172,20 @@ let types = [
   "water"
 ];
 
+
+// Filtering //
 filterSelection("all");
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("scene");
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "showpoke");
-    if (x[i].id.indexOf(c) > -1) w3AddClass(x[i], "showpoke");
+    pokeRemove(x[i], "showpoke");
+    if (x[i].id.indexOf(c) > -1) addPoke(x[i], "showpoke");
   }
 }
 
-function w3AddClass(element, name) {
+function addPoke(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
@@ -192,7 +194,7 @@ function w3AddClass(element, name) {
   }
 }
 
-function w3RemoveClass(element, name) {
+function pokeRemove(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
