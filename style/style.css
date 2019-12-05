@@ -13,6 +13,7 @@ body {
   box-shadow: 0 2px 0 rgba(0, 0, 0.4);
   height: 5rem;
   align-items: center;
+  z-index: 9;
 }
 #navlist {
   list-style: none;
