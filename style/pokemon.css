@@ -224,3 +224,9 @@ html {
   color: yellow;
   text-align: center;
 }
+
+
+/* Style button! */
+.btn {
+  background-color: blue;
+}
