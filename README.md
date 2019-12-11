@@ -20,7 +20,7 @@
 
 
 * ES6
-    * [Arrow functions ](https://github.com/10884500/crab90000/blob/master/js/pokemon.js) [More](https://github.com/10884500/crab90000/blob/master/js/senators.js)
+    * [Arrow functions ](https://github.com/10884500/crab90000/blob/master/js/pokemon.js), [More](https://github.com/10884500/crab90000/blob/master/js/senators.js)
 
     * [Use of Import and Export statements](https://github.com/10884500/crab90000/blob/master/js/starwars.js)
 
@@ -28,9 +28,9 @@
 * Basic Data Structures
     * [Using Arrays to store and manipulate collections of data](https://github.com/10884500/crab90000/blob/master/js/senators.js)
 
-    * Use of Objects with key-value pairs
+    * [Use of Objects with key-value pairs - line 154](https://github.com/10884500/crab90000/blob/master/js/pokemon.js)
 
-    * Iteration through an Array using loops and Array methods
+    * [Iteration through an Array using loops and Array methods](https://github.com/10884500/crab90000/blob/master/js/starwars.js), [More](https://github.com/10884500/crab90000/blob/master/js/senators.js)
 
 
 * Object Oriented Programming
