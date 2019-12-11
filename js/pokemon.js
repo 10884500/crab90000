@@ -20,9 +20,16 @@ newPoke.addEventListener('click', function() {
   getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
   .then(result => {
     popDOM(result)
+
+    // document.getElementsByClassName('btn active').click();
+    
+
+
   })
     } else {
       alert('There are no pokemon with that ID. Please choose another.')
+
+
   }
 })
 
