@@ -7,8 +7,7 @@
 ### Rubric Links
 * [HTML](https://github.com/10884500/crab90000)
 
-* CSS & Flexbox
-    * [All Style Sheets](https://github.com/10884500/crab90000/tree/master/style)
+* [CSS & Flexbox](https://github.com/10884500/crab90000/tree/master/style)
 
 
 * Basic JavaScript
