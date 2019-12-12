@@ -27,6 +27,7 @@ newPoke.addEventListener('click', function() {
   }
 })
 
+// Help from Devin LuBean
 function showAll(callback) {
   document.getElementById('showAll').click();
   return callback;
