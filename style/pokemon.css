@@ -165,7 +165,7 @@ html {
 .bounce {
   animation: bounce .75s;
   transform-origin: center bottom;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 3;
 }
 
 
@@ -202,7 +202,7 @@ html {
 
 .wobble {
   animation-name: wobble;
-  animation-iteration-count: 1;
+  animation-iteration-count: infinite;
 }
 
 .sprites {

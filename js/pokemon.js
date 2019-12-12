@@ -102,9 +102,9 @@ function fillCardFront(pokeFront, data) {
   pokeFront.appendChild(pic)
   pokeFront.appendChild(name)
 
-  pic.onmouseover = function() {
-    pic.classList.toggle('bounce');
-  };
+  // pic.onmouseover = function() {
+  //   pic.classList.toggle('bounce');
+  // };
 
   // pic.onmouseleave = function() {
   //   pic.classList.toggle('bounce');
@@ -114,7 +114,7 @@ function fillCardFront(pokeFront, data) {
   //   pokeFront.classList.toggle('wobble');
   // };
 
-  pic.onmouseleave = function() {
+  pic.onmouseover = function() {
     pic.classList.toggle('wobble');
   };
 }
@@ -145,7 +145,7 @@ function fillCardBack(pokeBack, data) {
   pokeBack.appendChild(pokeHP)
 
   pic.onmouseover = function() {
-    pic.classList.toggle('wobble');
+    pic.classList.toggle('bounce');
   };
 }
 
