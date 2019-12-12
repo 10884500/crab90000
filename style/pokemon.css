@@ -230,3 +230,11 @@ html {
 .btn {
   background-color: slategray;
 }
+
+button {
+  width: 5rem;
+  height: 1.5rem;
+  margin: .2rem;
+  border-radius: .5rem;
+  border-style: none;
+}
