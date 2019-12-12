@@ -1,11 +1,15 @@
 # Trevor Thompson
 
+
 ## Project Links
-* [Netlify Link](https://suspicious-shirley-92aa97.netlify.com/)
+* [Netlify Link](https://app.netlify.com/sites/mypokemonstufffinallyworks/overview)
 * [Github](https://github.com/10884500/crab90000)
 
-### Rubric Links
+
+### Work
+
 * [HTML](https://github.com/10884500/crab90000)
+
 
 * [CSS & Flexbox](https://github.com/10884500/crab90000/tree/master/style)
 
