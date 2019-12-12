@@ -27,7 +27,7 @@
 * Basic Data Structures
     * [Using Arrays to store and manipulate collections of data](https://github.com/10884500/crab90000/blob/master/js/senators.js)
 
-    * [Use of Objects with key-value pairs - line 154](https://github.com/10884500/crab90000/blob/master/js/pokemon.js)
+    * [Use of Objects with key-value pairs - line 161](https://github.com/10884500/crab90000/blob/master/js/pokemon.js)
 
     * [Iteration through an Array using loops and Array methods](https://github.com/10884500/crab90000/blob/master/js/starwars.js), [More](https://github.com/10884500/crab90000/blob/master/js/senators.js)
 
