@@ -29,7 +29,7 @@ newPoke.addEventListener('click', function() {
 
 function showAll(callback) {
   document.getElementById('showAll').click();
-  callback()
+  return callback;
 }
 
 // async function getHP(pokeId) {
