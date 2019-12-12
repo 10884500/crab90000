@@ -20,18 +20,17 @@ newPoke.addEventListener('click', function() {
   getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
   .then(result => {
     popDOM(result)
-
-    // document.getElementsByClassName('btn active').click();
-    
-
-
+    showAll();
   })
     } else {
       alert('There are no pokemon with that ID. Please choose another.')
-
-
   }
 })
+
+function showAll(callback) {
+  document.getElementsByClassName('btn active').click();
+  callback();
+}
 
 // async function getHP(pokeId) {
 //   getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`).then(pokemon => {
